@@ -1,6 +1,6 @@
 # SuperCollateral
 
-A dapp that enables users to use a salary NFT as a collateral for a loan. Salary NFT is an NFT that receives a salary in stream and redirects it to its owner. We use Superfuid to stream salary and Chainlink Keeper to trigger the required actions after the loan is repaid.
+A dapp that enables users to use a salary NFT as a collateral for a loan. Salary NFT is an NFT that receives salary in a stream and its owner has control over outflows from this NFT. We use Superfuid to stream salary and Chainlink Keeper to trigger the required actions after the loan is repaid.
 
 
 # 🏄‍♂️ Quick Start
@@ -20,7 +20,7 @@ yarn install
 cd super-collateral
 cp packages/hardhat/example.env packages/hardhat/.env
 ```
-Copy `example.env` and name it `.env`
+
 Set `KOVAN_ALCHEMY_KEY` in `packages/hardhat/.env` to your [Alchemy](https://www.alchemy.com/) key. Then:
 
 ```bash
@@ -49,3 +49,7 @@ yarn deploy
 💼 Edit your deployment scripts in `packages/hardhat/deploy`
 
 📱 Open http://localhost:3000 to see the app
+
+Check-out our deployment to Skynet at:
+
+[![Add to Homescreen](https://img.shields.io/badge/Skynet-Add%20To%20Homescreen-00c65e?logo=skynet&labelColor=0d0d0d)](https://homescreen.hns.siasky.net/#/skylink/100bubddthseja0qr3008bl350ajr6i2qr9uq4fptdtt2gi8mf4umso)

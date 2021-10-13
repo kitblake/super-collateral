@@ -47,7 +47,21 @@ const { ethers } = require("ethers");
     You can also bring in contract artifacts in `constants.js`
     (and then use the `useExternalContractLoader()` hook!)
 */
+import { getEntryLink, SkynetClient } from "skynet-js";
 
+const client = new SkynetClient();
+
+// setup keys and skylink
+const seed = process.env.SKYNET_REGISTRY_SEED;
+const { publicKey, privateKey } = genKeyPairFromSeed(seed);
+const dataKey = "myResolverSkylinkForDocument";
+const skylink = "sia://100bubddthseja0qr3008bl350ajr6i2qr9uq4fptdtt2gi8mf4umso";
+
+// set a registry entry to point at 'skylink'
+client.db.setDataLink(privateKey, dataKey, skylink);
+
+// get the resolver skylink which references the registry entry
+const resolverSkylink = getEntryLink(publicKey, dataKey);
 /// 📡 What chain are your contracts deployed to?
 const targetNetwork = NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
 
@@ -293,7 +307,7 @@ function App(props) {
     mainnetContracts,
   ]);
 
-  let networkDisplay = "";
+  let networkDisplay;
   if (NETWORKCHECK && localChainId && selectedChainId && localChainId !== selectedChainId) {
     const networkSelected = NETWORK(selectedChainId);
     const networkLocal = NETWORK(localChainId);
@@ -508,7 +522,16 @@ function App(props) {
             */}
 
             <Contract
-              name="YourContract"
+              name="LoanContract"
+              signer={userSigner}
+              provider={localProvider}
+              address={address}
+              blockExplorer={blockExplorer}
+              contractConfig={contractConfig}
+            />
+
+            <Contract
+              name="SalaryAnchorNFT"
               signer={userSigner}
               provider={localProvider}
               address={address}
