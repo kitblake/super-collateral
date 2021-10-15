@@ -67,7 +67,7 @@ div#controls form {position: absolute; bottom: 0; right: 0; width: 100%;
 #slide0 h2 {font: bold italic 1em sans-serif; margin: 0.25em; margin-right: 4.5em; padding-left: 48px;}
 #slide0 h3 {font-size: 1.5em; margin-right: 4.5em; padding-left: 48px;}
 #slide0 h4 {font-size: 1em; margin-top: 0; margin-right: 4.5em; padding-left: 48px;}
-div.imagery {text-align:center /*margin-top: -7%; padding: 0 0 0 8%*/}
+div.imagery {text-align:center}
 div.imagery img {width: auto; max-width: 90%; height: auto;}
 
 ul.urls {list-style: none; display: inline; margin: 0;}
