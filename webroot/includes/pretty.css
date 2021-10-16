@@ -61,13 +61,16 @@ div#controls form {position: absolute; bottom: 0; right: 0; width: 100%;
 
 #currentSlide {text-align: center; font-size: 0.5em; color: #EEE;}
 
+/* kustomizations */
 #slide0 {padding: 45px 4% 4% 4%; background: none;}
 #slide0 h1 {position: static; margin: 0 4.5em 0 0; padding: 240px 0 40px 48px;
    font: bold 2em/1.2em Roboto, sans-serif; white-space: normal; color: #000;}
 #slide0 h2 {font: bold italic 1em sans-serif; margin: 0.25em; margin-right: 4.5em; padding-left: 48px;}
 #slide0 h3 {font-size: 1.5em; margin-right: 4.5em; padding-left: 48px;}
 #slide0 h4 {font-size: 1em; margin-top: 0; margin-right: 4.5em; padding-left: 48px;}
-div.imagery {}
+div.splash {/* no stacking after 'slide' class allowed */}
+div.imagery {text-align:center;}
+img.imagery {width:auto; max-width:100%; height:auto; margin-top:-7%}
 
 ul.urls {list-style: none; display: inline; margin: 0;}
 .urls li {display: inline; margin: 0;}
